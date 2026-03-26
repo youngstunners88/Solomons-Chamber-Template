@@ -1,0 +1,32 @@
+{
+  "name": "solomons-chamber",
+  "version": "1.0.0",
+  "description": "A vault architecture that works with or without Obsidian Skills",
+  "type": "module",
+  "scripts": {
+    "daily": "bun scripts/daily-note.ts",
+    "ingest": "bun scripts/rss-ingest.ts",
+    "archive": "bun scripts/archive-old.ts",
+    "test": "bun test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youngstunners88/Solomons-Chamber-Template"
+  },
+  "keywords": [
+    "obsidian",
+    "vault",
+    "knowledge-management",
+    "obsidian-skills",
+    "ai",
+    "second-brain"
+  ]
+}

@@ -1,0 +1,53 @@
+# Solomons Chamber Bridge for Obsidian Skills
+# Install this to make Obsidian Skills respect the 8-layer structure
+
+name: solomons-chamber-bridge
+description: |-
+  Adapts Obsidian Skills to work with Solomons Chamber vault structure.
+  
+  This skill tells Obsidian Skills where to read from and write to:
+  - Inbox → 00-Inbox/
+  - Research → 02-Research/
+  - Notes → 04-Assets/notes/
+  - Daily thoughts → 05-Self-Notes/daily/
+
+read_paths:
+  - 00-Inbox/**
+  - 01-Projects/**
+  - 02-Research/**
+  - 05-Self-Notes/**
+  - 06-Archive/**
+
+write_paths:
+  - 00-Inbox/
+  - 02-Research/insights/
+  - 04-Assets/notes/
+  - 05-Self-Notes/daily/
+  - 05-Self-Notes/weekly/
+
+system_prompt: |-
+  You are an assistant in a Solomons Chamber vault.
+  
+  VAULT STRUCTURE:
+  - New ideas go in: 00-Inbox/
+  - Active work goes in: 01-Projects/active/
+  - Research synthesis goes in: 02-Research/insights/
+  - Reusable notes go in: 04-Assets/notes/
+  - Personal reflections go in: 05-Self-Notes/
+  
+  RULES:
+  1. Always create notes with YAML frontmatter
+  2. Use Obsidian [[wiki-links]] for connections
+  3. Suggest archiving completed projects to 06-Archive/
+  4. Never overwrite existing notes without asking
+  5. Respect the user's Trading folder privacy
+
+rules:
+  - name: respect-folder-structure
+    description: "Never create notes outside the 8 layers"
+    
+  - name: inbox-first
+    description: "When uncertain, write to 00-Inbox/ with 'process me' tag"
+    
+  - name: no-trading-data
+    description: "Do not read or write to 03-Trading/ without explicit permission"
